@@ -49,10 +49,10 @@ def get_data():
     for intent in intents['intents']:
         tag = intent['tag']
         if tag not in classes:
-            classes.append(tag)
+            classes.append(tag.lower())
 
         for pattern in intent['patterns']:
-            tokenized = nltk.word_tokenize(pattern)
+            tokenized = nltk.word_tokenize(pattern.lower())
             documents.append((tokenized, tag))
             for word in tokenized:
                 if word not in all_words:
