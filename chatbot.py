@@ -26,7 +26,7 @@ model.eval()
 if __name__ == '__main__':
     print("Hi, I'm eric-bot. Type 'quit' to exit")
     while True:
-        sentence = input('> ')
+        sentence = input('> ').lower()
         if sentence == 'quit':
             break
 
@@ -38,8 +38,6 @@ if __name__ == '__main__':
         output = model(X)
         _, pred = torch.max(output, dim=1)
         tag = classes[pred.item()]
-
-        print(pred)
 
         probs = torch.softmax(output, dim=1)
         prob = probs[0][pred.item()]
