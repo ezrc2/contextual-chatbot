@@ -93,6 +93,21 @@
       ]
     },
     {
+      "tag": "skills",
+      "patterns": [
+        "What are you good at?",
+        "What can you do?",
+        "What are your skills?",
+        "Tell me your skills"
+      ],
+      "responses": [
+        "I'm pretty good at using Python, C++, and Java",
+        "I can search on the internet very fast",
+        "Sometimes I procrastinate to make myself work more efficiently later... just kidding",
+        "I have pretty good problem solving and debugging skills"
+      ]
+    },
+    {
       "tag": "name",
       "patterns": [
         "What is your name?",
@@ -104,8 +119,8 @@
       ],
       "responses": [
         "You can call me your best friend",
-        "My name is X Æ A-Xiiiiiiiiiiii",
-        "I am eric-bot"
+        "My name is 𝔬𝔦𝔥𝔲𝔤𝔶𝔣𝔱7𝔡𝔯6𝔰457𝔣86",
+        "I am eric-bot2000"
       ]
     },
     {
@@ -118,7 +133,7 @@
         "Are you real?"
       ],
       "responses": [
-        "I am obviously real",
+        "I am real. The real question is, are you?",
         "Check this box to prove you are not a robot",
         "Can you prove that you are?"
       ]
