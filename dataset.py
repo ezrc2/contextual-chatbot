@@ -2,11 +2,20 @@ import json
 import nltk
 from nltk.stem.porter import PorterStemmer
 import numpy as np
-import torch
-import torch.nn as nn
-from torch.utils.data import DataLoader
-from model import ChatbotData
-from model import NeuralNetwork
+from torch.utils.data import Dataset
+
+class ChatbotDataset(Dataset):
+    
+    def __init__(self, X_train, y_train):
+        self.X_train = X_train
+        self.y_train = y_train
+        self.num_samples = len(X_train)
+
+    def __getitem__(self, index):
+        return self.X_train[index], self.y_train[index]
+
+    def __len__(self):
+        return self.num_samples
 
 
 def stem(word_list):
@@ -28,26 +37,8 @@ def bag_of_words(patterns, words):
             bag[i] = 1
 
     return bag
-
-def train(dataloader, model, loss_fn, optimizer):
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    for X, y in dataloader:
-        X = X.to(device)
-        y = y.to(device)
-
-        # forward
-        pred = model(X)
-        loss = loss_fn(pred, y)
-
-        # back propogation
-        optimizer.zero_grad()
-        loss.backward()
-        optimizer.step()
-
-        print (f'Loss: {loss.item():.4f}')
-
-
-def main():
+        
+def get_data():
     with open('intents.json') as file:
         intents = json.load(file)
 
@@ -77,18 +68,4 @@ def main():
     X_train = np.array(X_train)
     y_train = np.array(y_train)
 
-    batch_size = 32
-    epochs = 1000
-
-    train_dataloader = DataLoader(dataset=ChatbotData(X_train, y_train), batch_size=batch_size)
-    model = NeuralNetwork(input_size=len(all_words), hidden_size=8, num_classes=len(classes))
-    loss_fn = nn.CrossEntropyLoss()
-    optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
-
-    for i in range(epochs):
-        print(f"Epoch {i+1}\t", end=" ")
-        train(train_dataloader, model, loss_fn, optimizer)
- 
-
-if __name__ == '__main__':
-    main()
+    return X_train, y_train, all_words, classes
