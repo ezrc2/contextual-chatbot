@@ -48,6 +48,7 @@
       "tag": "academic",
       "patterns": [
         "What are you studying?",
+        "What do you study?",
         "What are you interested in?",
         "What are your interests?"
       ],
@@ -67,9 +68,9 @@
       ],
       "responses": [
         "I play basketball and used to play badminton",
-        "I work out quite a bit",
+        "I enjoy working out",
         "I enjoy cooking healthy food",
-        "Sometimes I just like to sleep a few extra hours",
+        "Sometimes I like to sleep a few extra hours",
         "I would like to do more woodworking",
         "I started to do a little parkour"
       ]
@@ -111,14 +112,12 @@
       "tag": "name",
       "patterns": [
         "What is your name?",
-        "What do I call you?",
         "What can I call you?",
-        "What do your friends call you?",
         "Who are you?",
         "Tell me your name"
       ],
       "responses": [
-        "You can call me your best friend",
+        "You can call me ______",
         "My name is 𝔬𝔦𝔥𝔲𝔤𝔶𝔣𝔱7𝔡𝔯6𝔰457𝔣86",
         "I am eric-bot2000"
       ]
