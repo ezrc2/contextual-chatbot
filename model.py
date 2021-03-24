@@ -35,27 +35,27 @@ def train(dataloader, model, loss_fn, optimizer):
         loss.backward()
         optimizer.step()
 
-        print(f'Loss: {loss.item():.4f}')
+        print(f"loss: {loss.item():>7f}")
 
 
 if __name__ == '__main__':
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     X_train, y_train, all_words, classes = get_data()
+    
     input_size = len(all_words)
-    hidden_size = 10
+    hidden_size = 8
     output_size = len(classes)
 
-    batch_size = 32
+    batch_size = 15
     epochs = 1000
     dataset = ChatbotDataset(X_train, y_train)
 
-    train_dataloader = DataLoader(dataset=dataset, batch_size=batch_size)
+    train_dataloader = DataLoader(dataset, batch_size=batch_size)
     model = NeuralNetwork(input_size=input_size, hidden_size=hidden_size, output_size=output_size)
     loss_fn = nn.CrossEntropyLoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 
     for i in range(epochs):
-        print(f"Epoch {i+1}\t", end=" ")
         train(train_dataloader, model, loss_fn, optimizer)
 
     model_data = {
