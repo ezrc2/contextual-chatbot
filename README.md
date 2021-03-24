@@ -1,6 +1,6 @@
 # contextual-chatbot
 
-Simple intent-based chatbot using a feed-forward neural network implemented with Pytorch.
+Intent-based chatbot using a feed-forward neural network implemented with PyTorch.
 
 **To train:**
 ```
