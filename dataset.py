@@ -1,6 +1,6 @@
 import json
 import nltk
-from nltk.stem.porter import PorterStemmer
+from nltk.stem import WordNetLemmatizer
 import numpy as np
 from torch.utils.data import Dataset
 
@@ -20,10 +20,10 @@ class ChatbotDataset(Dataset):
 
 def stem(word_list):
     ignore = ['?', '!', '.', ',']
-    stemmer = PorterStemmer()
+    lemmatizer = WordNetLemmatizer()
     for word in word_list:
         if word not in ignore:
-            word = stemmer.stem(word.lower())
+            word = lemmatizer.lemmatize(word.lower())
         else:
             word_list.remove(word)
 
