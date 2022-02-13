@@ -53,7 +53,7 @@ def form():
     else:
         response = "Sorry, I do not understand."
 
-    return response
+    return render_template('main.html', result=response)
 
 
 if __name__ == '__main__':

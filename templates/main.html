@@ -1,35 +1,48 @@
 <!doctype html>
 <html>
 
+<style>
+    html,
+    body {
+        height: 75%;
+    }
+
+    html {
+        display: table;
+        margin: auto;
+    }
+
+    body {
+        display: table-cell;
+        vertical-align: middle;
+        position: relative;
+    }
+
+    form {
+        text-align: left;
+        width: 100%;
+    }
+</style>
+
 <head>
-
-    <style>
-        html,
-        body {
-            height: 100%;
-        }
-
-        html {
-            display: table;
-            margin: auto;
-        }
-
-        body {
-            display: table-cell;
-            vertical-align: middle;
-        }
-    </style>
-
     <title>Chatbot</title>
-
 </head>
+
 <h1>Hi! I am eric-bot.</h1>
 
-Ask me a question.
+Ask me a question:
 
 <form method="POST">
     <input name="text">
     <input type="submit">
 </form>
+
+<div class="result">
+    {% if result %}
+    <br>
+    <br> Bot response:
+    <p style="font-size:25px; text-align:center; color:blue">{{result}}</p>
+    {% endif %}
+</div>
 
 </html>
