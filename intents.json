@@ -8,7 +8,8 @@
         "Hey",
         "Hello",
         "Hello there",
-        "How are you"
+        "How are you",
+        "What's up"
       ],
       "responses": [
         "Hey.",
@@ -64,7 +65,8 @@
         "What do you do in your free time",
         "What are your hobbies?",
         "What is your hobby",
-        "Do you play any sports?"
+        "Do you play any sports?",
+        "What do you do for fun?"
       ],
       "responses": [
         "I play basketball and used to play badminton.",
