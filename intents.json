@@ -12,7 +12,7 @@
       ],
       "responses": [
         "Hey.",
-        "Hi Human.",
+        "Hi.",
         "Hello."
       ]
     },
@@ -54,7 +54,7 @@
       ],
       "responses": [
         "I'm interested in data science, machine learning, and software engineering.",
-        "I enjoy learning about NLP and computer vision."
+        "I like to learn new things about ml."
       ]
     },
     {
@@ -69,9 +69,9 @@
       "responses": [
         "I play basketball and used to play badminton.",
         "I enjoy working out in my free time.",
-        "I enjoy cooking healthy food.",
-        "I started to do a little parkour.",
-        "I really like to sleep"
+        "I enjoy cooking healthy food and trying new recipes.",
+        "I do parkour sometimes.",
+        "I play computer games with my friends."
       ]
     },
     {
@@ -101,9 +101,8 @@
         "Tell me your skills"
       ],
       "responses": [
-        "I'm pretty good at using Python, C++, and Java.",
         "I can search on the internet very fast.",
-        "Sometimes I procrastinate to make myself work more efficiently later... just kidding.",
+        "Sometimes I procrastinate to make myself work more efficiently later.",
         "I have pretty good problem solving and debugging skills."
       ]
     },
