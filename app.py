@@ -6,6 +6,8 @@ import nltk
 from dataset import bag_of_words
 from model import NeuralNetwork
 
+nltk.download('punkt')
+
 app = Flask(__name__)
 
 
